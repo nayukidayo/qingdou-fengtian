@@ -18,10 +18,10 @@ const option ={
             "name": "详细",
             "icon": "icon-link",
             "img": "/img/text3.f5d96f13.png",
-            "top": 660.15,
-            "left": 1752.3,
+            "top": 659.1,
+            "left": 1653.6,
             "data": {
-                "value": "查看更多"
+                "value": "润滑异常"
             },
             "dataFormatter": "",
             "stylesFormatter": "",
@@ -33,16 +33,51 @@ const option ={
             },
             "option": {
                 "link": true,
-                "linkHref": "http://127.0.0.1:3000/yichang.html",
+                "linkHref": "http://127.0.0.1:3000/runhua.html",
                 "linkTarget": "_blank",
                 "textAlign": "center",
-                "fontSize": 18,
+                "fontSize": 16,
                 "fontWeight": "normal",
                 "color": "rgba(144, 240, 144, 0.5)",
                 "split": 0,
                 "lineHeight": 0
             },
             "index": "1b4f4b8e-0a27-41cf-a89f-9ca3f1324f83",
+            "zIndex": 22,
+            "child": {
+                "index": []
+            }
+        },
+        {
+            "title": "超链接",
+            "name": "详细",
+            "icon": "icon-link",
+            "img": "/img/text3.f5d96f13.png",
+            "top": 660.15,
+            "left": 1752.3,
+            "data": {
+                "value": "型温异常"
+            },
+            "dataFormatter": "",
+            "stylesFormatter": "",
+            "component": {
+                "width": 89.2,
+                "height": 35.15,
+                "name": "text",
+                "prop": "text"
+            },
+            "option": {
+                "link": true,
+                "linkHref": "http://127.0.0.1:3000/xingwen.html",
+                "linkTarget": "_blank",
+                "textAlign": "center",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "color": "rgba(144, 240, 144, 0.5)",
+                "split": 0,
+                "lineHeight": 0
+            },
+            "index": "5debc5d2-9c0c-4349-8dee-b10eea6cf135",
             "zIndex": 21,
             "child": {
                 "index": []
