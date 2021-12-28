@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+  <META HTTP-EQUIV="Expires" CONTENT="0">
+  <script src="./index.js"></script>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1117329_z5buvlhlaf.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/3.5.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.3/theme-chalk/index.min.css">
+  <link rel="stylesheet" href="https://avuejs.com/lib/index.css">
+  <link rel="stylesheet" href="https://data.avuejs.com/lib/index.css">
+  <script src="https://data.avuejs.com/config.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.2.1/echarts.min.js"></script>
+  <script src="https://data.avuejs.com/cdn/echarts-wordcloud.min.js"></script>
+  <script src="https://data.avuejs.com/cdn/clappr.min.js"></script>
+  <script src="https://data.avuejs.com/const/theme/avue.project.js"></script>
+  <script src="https://data.avuejs.com/const/theme/halloween.project.js"></script>
+  <script src="https://data.avuejs.com/const/theme/wonderland.project.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js" charset="utf-8"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js" charset="utf-8"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.3/index.min.js" charset="utf-8"></script>
+  <script src="https://avuejs.com/lib/avue.min.js"></script>
+  <script src="https://data.avuejs.com/cdn/datav.min.vue.js"></script>
+  <script src="https://data.avuejs.com/lib/index.umd.min.js"></script>
+  <title>2000T数据大屏</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body,
+    html,
+    #app {
+      height: 100%;
+    }
+
+    #login {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+    }
+
+    #login>div {
+      box-sizing: border-box;
+      padding: 2.5rem;
+      border-radius: 0.5rem;
+      max-width: 32rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    #username,
+    #password {
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      color: rgba(55, 65, 81, 1);
+    }
+
+    #username>input,
+    #password>input {
+      box-sizing: border-box;
+      box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-color: rgba(209, 213, 219, 1);
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 0.375rem;
+      width: 100%;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #submit {
+      box-sizing: border-box;
+      color: rgba(255, 255, 255, 1);
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background-color: rgba(29, 78, 216, 1);
+      border-radius: 0.25rem;
+      border: none;
+      width: 100%;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function GetQueryString(name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) return unescape(r[2]); return null;
+    }
+    Vue.use(window.AVUE);
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <avue-data :props="props" :option="option"></avue-data>
+  </div>
+  <div id="login">
+    <div>
+      <div id="username">
+        <label for="username" class="">用户名</label>
+        <input name="username" type="text" class="">
+      </div>
+      <div id="password">
+        <label for="password" class="">密码</label>
+        <input name="password" type="password" class="">
+      </div>
+      <button id="submit" class="">登录</button>
+    </div>
+  </div>
+  <script>
+    // 简单认证
+    !(function () {
+      const auth = sessionStorage.getItem('auth')
+      if (auth) {
+        $('#login').hide()
+        return
+      }
+      $('#submit').click(function () {
+        const username = $('#username>input').val()
+        const password = $('#password>input').val()
+        fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        })
+          .then(res => {
+            if (!res.ok) throw new Error(res.status)
+            return res.json()
+          })
+          .then(res => {
+            if (res.err !== 0) throw new Error(res.msg)
+            sessionStorage.setItem('auth', true)
+            $('#login').hide()
+          })
+          .catch(() => {
+            alert('用户名或密码不正确')
+          })
+      })
+    })()
+  </script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          props: {
+            id: GetQueryString('id'),
+            name: 'view'
+          },
+          option: option
+        }
+      },
+      components: {
+        avueData
+      }
+    })
+  </script>
+</body>
+
+</html>
