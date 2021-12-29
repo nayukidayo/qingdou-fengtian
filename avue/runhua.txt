@@ -1,5 +1,5 @@
-const option ={
-    "detail": {
+{
+    "config": {
         "width": 1920,
         "height": 1080,
         "query": {},
@@ -32,7 +32,7 @@ const option ={
                 "paramName": ""
             },
             "data": {
-                "value": "型温异常数据"
+                "value": "润滑异常数据"
             },
             "component": {
                 "width": 181,
@@ -49,7 +49,7 @@ const option ={
                 "lineHeight": 0
             },
             "left": 843.75,
-            "top": 12.15,
+            "top": 13.5,
             "index": "93d3be4a-73b4-4dd9-83fc-d659f1117d7a",
             "zIndex": 3
         },
@@ -129,89 +129,114 @@ const option ={
                 "index": false,
                 "column": [
                     {
-                        "label": "荒2-下-2",
-                        "prop": "xingwen17",
+                        "label": "3回目液量-1荒上",
+                        "prop": "runhua17",
                         "$index": 0
                     },
                     {
-                        "label": "荒2-下-3",
-                        "prop": "xingwen18",
+                        "label": "3回目液量-1荒下",
+                        "prop": "runhua18",
                         "$index": 1
                     },
                     {
-                        "label": "荒2-下-4",
-                        "prop": "xingwen19",
+                        "label": "3回目液量-2荒上",
+                        "prop": "runhua19",
                         "$index": 2
                     },
                     {
-                        "label": "荒2-下-5",
-                        "prop": "xingwen20",
+                        "label": "3回目液量-2荒下",
+                        "prop": "runhua20",
                         "$index": 3
                     },
                     {
-                        "label": "仕上上-1",
-                        "prop": "xingwen21",
+                        "label": "3回目液量-仕上上",
+                        "prop": "runhua21",
                         "$index": 4
                     },
                     {
-                        "label": "仕上上-2",
-                        "prop": "xingwen22",
+                        "label": "3回目液量-仕上下",
+                        "prop": "runhua22",
                         "$index": 5
                     },
                     {
-                        "label": "仕上上-3",
-                        "prop": "xingwen23",
+                        "label": "混合气压-1荒",
+                        "prop": "runhua23",
                         "$index": 6
                     },
                     {
-                        "label": "仕上上-4",
-                        "prop": "xingwen24",
+                        "label": "混合气压-2荒",
+                        "prop": "runhua24",
                         "$index": 7
                     },
                     {
-                        "label": "仕上上-5",
-                        "prop": "xingwen25",
+                        "label": "混合气压-仕上",
+                        "prop": "runhua25",
                         "$index": 8
                     },
                     {
-                        "label": "仕上下-1",
-                        "prop": "xingwen26",
+                        "label": "PA压-荒1",
+                        "prop": "runhua26",
                         "$index": 9
                     },
                     {
-                        "label": "仕上下-2",
-                        "prop": "xingwen27",
+                        "label": "PA压-荒2",
+                        "prop": "runhua27",
                         "$index": 10
                     },
                     {
-                        "label": "仕上下-3",
-                        "prop": "xingwen28",
+                        "label": "PA压-仕上",
+                        "prop": "runhua28",
                         "$index": 11
                     },
                     {
-                        "label": "仕上下-4",
-                        "prop": "xingwen29",
+                        "label": "干燥气压-1荒",
+                        "prop": "runhua29",
                         "$index": 12
                     },
                     {
-                        "label": "仕上下-5",
-                        "prop": "xingwen30",
+                        "label": "干燥气压-2荒",
+                        "prop": "runhua30",
                         "$index": 13
                     },
                     {
-                        "label": "材料温度",
-                        "prop": "xingwen31",
+                        "label": "干燥气压-仕上",
+                        "prop": "runhua31",
                         "$index": 14
                     },
                     {
-                        "label": "温间精整荷重",
-                        "prop": "xingwen32",
+                        "label": "液压-1荒上",
+                        "prop": "runhua32",
                         "$index": 15
+                    },
+                    {
+                        "label": "液压-1荒下",
+                        "prop": "runhua33",
+                        "$index": 16
+                    },
+                    {
+                        "label": "液压-2荒上",
+                        "prop": "runhua34",
+                        "$index": 17
+                    },
+                    {
+                        "label": "液压-2荒下",
+                        "prop": "runhua35",
+                        "$index": 18
+                    },
+                    {
+                        "label": "液压-仕上上",
+                        "prop": "runhua36",
+                        "$index": 19
+                    },
+                    {
+                        "label": "液压-仕上下",
+                        "prop": "runhua37",
+                        "$index": 20
                     },
                     {
                         "label": "更新时间",
                         "prop": "uptime",
-                        "$index": 16
+                        "$index": 21
                     }
                 ],
                 "headerFontSize": 12
@@ -219,7 +244,7 @@ const option ={
             "index": "896c052e-6b88-410d-84d0-9c88073ddca4",
             "zIndex": 1,
             "child": {},
-            "url": "/api/YICHANG",
+            "url": "http://127.0.0.1:3000/api/YICHANG",
             "dataMethod": "get",
             "time": 600000
         },
@@ -281,83 +306,83 @@ const option ={
                         "$index": 0
                     },
                     {
-                        "label": "荒1上-1",
-                        "prop": "xingwen1",
+                        "label": "S/H",
+                        "prop": "runhua1",
                         "$index": 1
                     },
                     {
-                        "label": "荒1上-2",
-                        "prop": "xingwen2",
+                        "label": "荒1荷重",
+                        "prop": "runhua2",
                         "$index": 2
                     },
                     {
-                        "label": "荒1上-3",
-                        "prop": "xingwen3",
+                        "label": "荒2荷重",
+                        "prop": "runhua3",
                         "$index": 3
                     },
                     {
-                        "label": "荒1上-4",
-                        "prop": "xingwen4",
+                        "label": "仕上+背切荷重",
+                        "prop": "runhua4",
                         "$index": 4
                     },
                     {
-                        "label": "荒1上-5",
-                        "prop": "xingwen5",
+                        "label": "1回目液量-1荒上",
+                        "prop": "runhua5",
                         "$index": 5
                     },
                     {
-                        "label": "荒1下-1",
-                        "prop": "xingwen6",
+                        "label": "1回目液量-1荒下",
+                        "prop": "runhua6",
                         "$index": 6
                     },
                     {
-                        "label": "荒1下-2",
-                        "prop": "xingwen7",
+                        "label": "1回目液量-2荒上",
+                        "prop": "runhua7",
                         "$index": 7
                     },
                     {
-                        "label": "荒1下-3",
-                        "prop": "xingwen8",
+                        "label": "1回目液量-2荒下",
+                        "prop": "runhua8",
                         "$index": 8
                     },
                     {
-                        "label": "荒1下-4",
-                        "prop": "xingwen9",
+                        "label": "1回目液量-仕上上",
+                        "prop": "runhua9",
                         "$index": 9
                     },
                     {
-                        "label": "荒1下-5",
-                        "prop": "xingwen10",
+                        "label": "1回目液量-仕上下",
+                        "prop": "runhua10",
                         "$index": 10
                     },
                     {
-                        "label": "荒2上-1",
-                        "prop": "xingwen11",
+                        "label": "2回目液量-1荒上",
+                        "prop": "runhua11",
                         "$index": 11
                     },
                     {
-                        "label": "荒2上-2",
-                        "prop": "xingwen12",
+                        "label": "2回目液量-1荒下",
+                        "prop": "runhua12",
                         "$index": 12
                     },
                     {
-                        "label": "荒2上-3",
-                        "prop": "xingwen13",
+                        "label": "2回目液量-2荒上",
+                        "prop": "runhua13",
                         "$index": 13
                     },
                     {
-                        "label": "荒2上-4",
-                        "prop": "xingwen14",
+                        "label": "2回目液量-2荒下",
+                        "prop": "runhua14",
                         "$index": 14
                     },
                     {
-                        "label": "荒2上-5",
-                        "prop": "xingwen15",
+                        "label": "2回目液量-仕上上",
+                        "prop": "runhua15",
                         "$index": 15
                     },
                     {
-                        "label": "荒2-下-1",
-                        "prop": "xingwen16",
+                        "label": "2回目液量-仕上下",
+                        "prop": "runhua16",
                         "$index": 16
                     }
                 ],
@@ -366,7 +391,7 @@ const option ={
             "index": "07c9fa39-af46-4561-876f-1b807e0bed56",
             "zIndex": 0,
             "child": {},
-            "url": "/api/YICHANG",
+            "url": "http://127.0.0.1:3000/api/YICHANG",
             "dataMethod": "get",
             "time": 600000
         }

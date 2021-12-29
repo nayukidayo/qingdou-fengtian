@@ -245,7 +245,8 @@ const option ={
             "zIndex": 1,
             "child": {},
             "url": "/api/YICHANG",
-            "dataMethod": "get"
+            "dataMethod": "get",
+            "time": 600000
         },
         {
             "title": "表格",
@@ -391,7 +392,8 @@ const option ={
             "zIndex": 0,
             "child": {},
             "url": "/api/YICHANG",
-            "dataMethod": "get"
+            "dataMethod": "get",
+            "time": 600000
         }
     ]
 }
