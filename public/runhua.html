@@ -27,7 +27,7 @@
   <script src="https://avuejs.com/lib/avue.min.js"></script>
   <script src="https://data.avuejs.com/cdn/datav.min.vue.js"></script>
   <script src="https://data.avuejs.com/lib/index.umd.min.js"></script>
-  <title>2000T数据大屏-润滑异常数据</title>
+  <title>TTFC2000T连杆线生产信息指示系统-润滑异常数据</title>
   <style>
     * {
       padding: 0;
@@ -49,14 +49,30 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #fff;
+      flex-direction: column;
+      background: url(/img/bg/bg1.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #login>.title {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 3rem;
+      background: transparent;
+      color: #1d4ed8;
+    }
+
+    #login>.title>span {
+      font-weight: 700;
+      margin-right: 5px;
     }
 
     #login>div {
+      background: aliceblue;
       box-sizing: border-box;
       padding: 2.5rem;
       border-radius: 0.5rem;
-      max-width: 32rem;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     }
 
@@ -65,7 +81,7 @@
       box-sizing: border-box;
       margin-bottom: 1.5rem;
       font-weight: 500;
-      color: rgba(55, 65, 81, 1);
+      color: #1d4ed8bf;
     }
 
     #username>input,
@@ -116,6 +132,7 @@
     <avue-data :props="props" :option="option"></avue-data>
   </div>
   <div id="login">
+    <div class="title"><span>TTFC2000T</span>连杆线信息指示系统</div>
     <div>
       <div id="username">
         <label for="username" class="">用户名</label>
@@ -131,12 +148,18 @@
   <script>
     // 简单认证
     !(function () {
-      cookieStore.get('auth')
-        .then(auth => {
-          if (auth) {
-            $('#login').hide()
-          }
+      function getCookie(name) {
+        let cookie = {};
+        document.cookie.split(';').forEach(el => {
+          let [k, v] = el.split('=');
+          cookie[k.trim()] = v;
         })
+        return cookie[name];
+      }
+      const auth = getCookie('auth')
+      if (auth) {
+        $('#login').hide()
+      }
       $('#submit').click(function () {
         const username = $('#username>input').val()
         const password = $('#password>input').val()
@@ -151,9 +174,7 @@
           })
           .then(res => {
             if (res.err !== 0) throw new Error(res.msg)
-            return cookieStore.set({ name: 'auth', value: 'success' })
-          })
-          .then(() => {
+            document.cookie = 'auth=success'
             $('#login').hide()
           })
           .catch(() => {

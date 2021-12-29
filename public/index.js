@@ -15,10 +15,45 @@ const option ={
     "component": [
         {
             "title": "超链接",
+            "name": "超链接",
+            "icon": "icon-link",
+            "img": "/img/text3.f5d96f13.png",
+            "top": 10.5,
+            "left": 474.6,
+            "data": {
+                "value": "详细"
+            },
+            "dataFormatter": "",
+            "stylesFormatter": "",
+            "component": {
+                "width": 100,
+                "height": 29,
+                "name": "text",
+                "prop": "text"
+            },
+            "option": {
+                "link": true,
+                "linkHref": "http://192.168.0.200:8391/index",
+                "linkTarget": "_blank",
+                "textAlign": "center",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "color": "rgba(144, 240, 144, 0.5)",
+                "split": 0,
+                "lineHeight": 0
+            },
+            "index": "0fa6ef65-ba38-4a3c-9988-e4a42c817501",
+            "zIndex": 23,
+            "child": {
+                "index": []
+            }
+        },
+        {
+            "title": "超链接",
             "name": "详细",
             "icon": "icon-link",
             "img": "/img/text3.f5d96f13.png",
-            "top": 659.1,
+            "top": 658.05,
             "left": 1653.6,
             "data": {
                 "value": "润滑异常"
@@ -33,7 +68,7 @@ const option ={
             },
             "option": {
                 "link": true,
-                "linkHref": "http://127.0.0.1:3000/runhua.html",
+                "linkHref": "/runhua.html",
                 "linkTarget": "_blank",
                 "textAlign": "center",
                 "fontSize": 16,
@@ -68,7 +103,7 @@ const option ={
             },
             "option": {
                 "link": true,
-                "linkHref": "http://127.0.0.1:3000/xingwen.html",
+                "linkHref": "/xingwen.html",
                 "linkTarget": "_blank",
                 "textAlign": "center",
                 "fontSize": 16,
@@ -92,7 +127,7 @@ const option ={
                 "index": [],
                 "paramName": ""
             },
-            "top": 81,
+            "top": 79.95,
             "left": 1331.1,
             "dataType": 1,
             "data": [
@@ -151,7 +186,7 @@ const option ={
             "index": "1b7f7b4d-52cb-4a39-a790-2dec0cb481b2",
             "zIndex": 20,
             "time": 600000,
-            "url": "http://127.0.0.1:3000/api/STAT",
+            "url": "/api/STAT",
             "dataMethod": "get"
         },
         {
@@ -207,7 +242,7 @@ const option ={
             },
             "index": "57bcd463-54d1-4a58-8e2f-b4483e6f6a25",
             "zIndex": 19,
-            "url": "http://127.0.0.1:3000/api/MIANJI",
+            "url": "/api/MIANJI",
             "dataMethod": "get",
             "time": 600000
         },
@@ -438,7 +473,7 @@ const option ={
             "zIndex": 14,
             "child": {},
             "time": 600000,
-            "url": "http://127.0.0.1:3000/api/YICHANG",
+            "url": "/api/YICHANG",
             "dataMethod": "get"
         },
         {
@@ -564,7 +599,7 @@ const option ={
             "index": "95beaced-fcc1-4182-a8f4-a70bf766b305",
             "zIndex": 12,
             "child": {},
-            "url": "http://127.0.0.1:3000/api/RATE",
+            "url": "/api/RATE",
             "dataMethod": "get",
             "time": 600000
         },
@@ -697,7 +732,7 @@ const option ={
             "index": "fb09f343-62ac-4502-9225-84184938f129",
             "zIndex": 10,
             "child": {},
-            "url": "http://127.0.0.1:3000/api/BLP",
+            "url": "/api/BLP",
             "dataMethod": "get",
             "display": false,
             "time": 60000
@@ -866,7 +901,7 @@ const option ={
                     },
                     "dataFormatter": "function (data, params, refs) {\n  const rs = {\n    categories: [\n      '1',\n      '2',\n      '3',\n      '4',\n      '5',\n      '6',\n      '7',\n      '8',\n      '9',\n      '10',\n      '11',\n      '12',\n      '13',\n      '14',\n      '15',\n      '16',\n      '17',\n      '18',\n      '19',\n      '20',\n      '21',\n      '22',\n      '23',\n      '24',\n      '25',\n      '26',\n      '27',\n      '28',\n      '29',\n      '30',\n      '31',\n    ],\n    series: [],\n  }\n  if (data.err === 0) {\n    rs.series = data.data\n  }\n  return rs\n}",
                     "stylesFormatter": "",
-                    "url": "http://127.0.0.1:3000/api/day",
+                    "url": "/api/day",
                     "time": 60000,
                     "component": {
                         "width": 1292.56,
@@ -951,7 +986,7 @@ const option ={
                         "xAxisinterval": false,
                         "legend": true
                     },
-                    "left": 583.04,
+                    "left": 581.99,
                     "top": 362.56,
                     "index": "c41023a1-e9b1-46cc-a0ae-b3256d8e87bc",
                     "zIndex": 7,
