@@ -146,6 +146,25 @@
     </div>
   </div>
   <script>
+    function createUI() {
+      new Vue({
+        el: '#app',
+        data() {
+          return {
+            props: {
+              id: GetQueryString('id'),
+              name: 'view'
+            },
+            option: option
+          }
+        },
+        components: {
+          avueData
+        }
+      })
+    }
+  </script>
+  <script>
     // 简单认证
     !(function () {
       function getCookie(name) {
@@ -156,9 +175,9 @@
         })
         return cookie[name];
       }
-      const auth = getCookie('auth')
-      if (auth) {
+      if (getCookie('auth')) {
         $('#login').hide()
+        createUI()
       }
       $('#submit').click(function () {
         const username = $('#username>input').val()
@@ -175,6 +194,7 @@
           .then(res => {
             if (res.err !== 0) throw new Error(res.msg)
             document.cookie = 'auth=success'
+            createUI()
             $('#login').hide()
           })
           .catch(() => {
@@ -182,23 +202,6 @@
           })
       })
     })()
-  </script>
-  <script>;
-    new Vue({
-      el: '#app',
-      data() {
-        return {
-          props: {
-            id: GetQueryString('id'),
-            name: 'view'
-          },
-          option: option
-        }
-      },
-      components: {
-        avueData
-      }
-    })
   </script>
 </body>
 

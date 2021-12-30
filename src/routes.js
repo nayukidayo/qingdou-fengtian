@@ -16,14 +16,15 @@ module.exports = async f => {
         },
       },
     },
-    async req => {
+    async (req, res) => {
       const { username, password } = req.body
       const { recordset } = await f.db
         .request()
         .input('name', sql.VarChar(50), username)
         .query('select * from TTFC2000TREG where name = @name')
       if (recordset[0]?.password !== password) {
-        return { err: 403 }
+        res.code(401)
+        return { err: 4011, msg: '身份验证错误' }
       }
       return { err: 0 }
     }
@@ -48,9 +49,8 @@ module.exports = async f => {
         },
       },
     },
-    async req => {
-      const now = new Date()
-      const table = `${now.getFullYear()}${now.getMonth() + 1}`
+    async (req, res) => {
+      const table = f.table()
       const { cat } = req.query
       if (cat === 'CUTNO1') {
         const rs = await f.db.request().query(`select * from TTFC2000TCUTNO1${table}`)
@@ -76,14 +76,14 @@ module.exports = async f => {
         const rs = await f.db.request().query(`select * from TTFC2000TWCP2${table}`)
         return { err: 0, data: f.pinfan(rs) }
       }
-      return { err: 400, msg: '请求参数有误' }
+      res.code(400)
+      return { err: 4002, msg: '请求参数错误' }
     }
   )
 
   // 不良品 3 banci 31 day 31 pinfan
   f.get('/api/BLP', async () => {
-    const now = new Date()
-    const table = `${now.getFullYear()}${now.getMonth() + 1}`
+    const table = f.table()
     const rs = await f.db.request().query(`select * from TTFC2000TBLP${table}`)
     return { err: 0, data: f.blp(rs) }
   })

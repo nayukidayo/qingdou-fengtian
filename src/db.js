@@ -1,7 +1,7 @@
-const fastifyPlugin = require('fastify-plugin')
+const fp = require('fastify-plugin')
 const sql = require('mssql')
 
-async function dbConnector(f) {
+module.exports = fp(async f => {
   const pool = await sql.connect({
     user: 'sa',
     password: 'ttfc',
@@ -19,6 +19,4 @@ async function dbConnector(f) {
   })
 
   f.decorate('db', pool)
-}
-
-module.exports = fastifyPlugin(dbConnector)
+})

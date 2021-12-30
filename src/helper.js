@@ -1,5 +1,12 @@
 const fp = require('fastify-plugin')
 
+function table() {
+  const now = new Date()
+  const y = now.getFullYear()
+  const m = now.getMonth() + 1
+  return `${y}${m.toString().padStart(2, '0')}`
+}
+
 function banci(rs) {
   const data = []
   const list = ['早班', '中班', '晚班']
@@ -91,11 +98,11 @@ function stat(rs1, rs2) {
   }
 }
 
-module.exports = fp((f, _, done) => {
+module.exports = fp(async f => {
+  f.decorate('table', table)
   f.decorate('banci', banci)
   f.decorate('pinfan', pinfan)
   f.decorate('blp', blp)
   f.decorate('rate', rate)
   f.decorate('stat', stat)
-  done()
 })
