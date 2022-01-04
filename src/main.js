@@ -12,8 +12,8 @@ const f = require('fastify')({
 })
 
 f.setErrorHandler(async (err, req, res) => {
+  console.log(req.method, req.url, err)
   if (err.validation) {
-    console.log(req.method, req.url, err.message)
     res.code(400)
     return { err: 4001, msg: err.message }
   }

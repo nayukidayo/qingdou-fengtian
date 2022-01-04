@@ -48,8 +48,8 @@
                 "split": 0,
                 "lineHeight": 0
             },
-            "left": 843.75,
-            "top": 13.5,
+            "left": 851.85,
+            "top": 12.15,
             "index": "93d3be4a-73b4-4dd9-83fc-d659f1117d7a",
             "zIndex": 3
         },
@@ -59,7 +59,7 @@
             "icon": "icon-img",
             "img": "/img/imgborder.a784b680.png",
             "top": -1.35,
-            "left": 780.3,
+            "left": 783,
             "dataType": 0,
             "data": "/img/border/border5.png",
             "component": {
@@ -81,8 +81,8 @@
             "name": "表格2",
             "icon": "icon-table",
             "img": "/img/table.215c94c3.png",
-            "top": 554.85,
-            "left": 5.4,
+            "top": 567,
+            "left": 0,
             "dataType": 1,
             "data": [
                 {
@@ -102,11 +102,11 @@
                     "type2": "数据4"
                 }
             ],
-            "dataFormatter": "function (data, params, refs) {\n  if (data.err === 0) {\n    data.data.forEach(v => {\n      const now = new Date(v.uptime)\n      const y = now.getFullYear()\n      const m = now.getMonth() + 1\n      const d = now.getDate()\n      v.uptime = `${y}年${m}月${d}日`\n    })\n    return data.data\n  }\n  return {}\n}",
+            "dataFormatter": "function (data, params, refs) {\n  if (data.err === 0) {\n    return data.data\n  }\n  return {}\n}",
             "stylesFormatter": "",
             "component": {
-                "width": 1888,
-                "height": 501.2,
+                "width": 1897.45,
+                "height": 489.05,
                 "name": "table",
                 "prop": "table"
             },
@@ -232,11 +232,6 @@
                         "label": "液压-仕上下",
                         "prop": "runhua37",
                         "$index": 20
-                    },
-                    {
-                        "label": "更新时间",
-                        "prop": "uptime",
-                        "$index": 21
                     }
                 ],
                 "headerFontSize": 12
@@ -244,7 +239,7 @@
             "index": "896c052e-6b88-410d-84d0-9c88073ddca4",
             "zIndex": 1,
             "child": {},
-            "url": "http://127.0.0.1:3000/api/YICHANG",
+            "url": "http://127.0.0.1:3000/api/yichang",
             "dataMethod": "get",
             "time": 600000
         },
@@ -274,10 +269,10 @@
                     "type2": "数据4"
                 }
             ],
-            "dataFormatter": "function (data, params, refs) {\n  if (data.err === 0) {\n    return data.data\n  }\n  return {}\n}",
+            "dataFormatter": "function (data, params, refs) {\n  if (data.err === 0) {\n    data.data.forEach(v => {\n      const now = new Date(v.uptime)\n      const date = now.toLocaleDateString('cn')\n      const time = now.toLocaleTimeString('uk')\n      v.uptime = `${date} ${time}`\n    })\n    return data.data\n  }\n  return {}\n}",
             "stylesFormatter": "",
             "component": {
-                "width": 1890.25,
+                "width": 1895.65,
                 "height": 450.5,
                 "name": "table",
                 "prop": "table"
@@ -301,89 +296,96 @@
                 "index": false,
                 "column": [
                     {
+                        "label": "更新时间",
+                        "prop": "uptime",
+                        "width": "200",
+                        "$index": 0
+                    },
+                    {
                         "label": "品番",
                         "prop": "pinfan",
-                        "$index": 0
+                        "width": "50",
+                        "$index": 1
                     },
                     {
                         "label": "S/H",
                         "prop": "runhua1",
-                        "$index": 1
+                        "$index": 2
                     },
                     {
                         "label": "荒1荷重",
                         "prop": "runhua2",
-                        "$index": 2
+                        "$index": 3
                     },
                     {
                         "label": "荒2荷重",
                         "prop": "runhua3",
-                        "$index": 3
+                        "$index": 4
                     },
                     {
                         "label": "仕上+背切荷重",
                         "prop": "runhua4",
-                        "$index": 4
+                        "$index": 5
                     },
                     {
                         "label": "1回目液量-1荒上",
                         "prop": "runhua5",
-                        "$index": 5
+                        "$index": 6
                     },
                     {
                         "label": "1回目液量-1荒下",
                         "prop": "runhua6",
-                        "$index": 6
+                        "$index": 7
                     },
                     {
                         "label": "1回目液量-2荒上",
                         "prop": "runhua7",
-                        "$index": 7
+                        "$index": 8
                     },
                     {
                         "label": "1回目液量-2荒下",
                         "prop": "runhua8",
-                        "$index": 8
+                        "$index": 9
                     },
                     {
                         "label": "1回目液量-仕上上",
                         "prop": "runhua9",
-                        "$index": 9
+                        "$index": 10
                     },
                     {
                         "label": "1回目液量-仕上下",
                         "prop": "runhua10",
-                        "$index": 10
+                        "$index": 11
                     },
                     {
                         "label": "2回目液量-1荒上",
                         "prop": "runhua11",
-                        "$index": 11
+                        "$index": 12
                     },
                     {
                         "label": "2回目液量-1荒下",
                         "prop": "runhua12",
-                        "$index": 12
+                        "$index": 13
                     },
                     {
                         "label": "2回目液量-2荒上",
                         "prop": "runhua13",
-                        "$index": 13
+                        "$index": 14
                     },
                     {
                         "label": "2回目液量-2荒下",
                         "prop": "runhua14",
-                        "$index": 14
+                        "$index": 15
                     },
                     {
                         "label": "2回目液量-仕上上",
                         "prop": "runhua15",
-                        "$index": 15
+                        "$index": 16
                     },
                     {
                         "label": "2回目液量-仕上下",
                         "prop": "runhua16",
-                        "$index": 16
+                        "$index": 17
                     }
                 ],
                 "headerFontSize": 12
@@ -391,7 +393,7 @@
             "index": "07c9fa39-af46-4561-876f-1b807e0bed56",
             "zIndex": 0,
             "child": {},
-            "url": "http://127.0.0.1:3000/api/YICHANG",
+            "url": "http://127.0.0.1:3000/api/yichang",
             "dataMethod": "get",
             "time": 600000
         }
