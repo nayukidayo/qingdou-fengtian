@@ -81,6 +81,7 @@ function mPinfan(rs) {
 function blp(rs) {
   const data = []
   const dict = ['早班', '中班', '晚班']
+  if (!rs.recordset.length) return data
   for (let i = 1; i <= 31; i++) {
     for (let j = 0; j < 3; j++) {
       data.push({
@@ -95,7 +96,6 @@ function blp(rs) {
 }
 
 function ratehis(rs) {
-  console.log('rs.recordset', rs.recordset)
   return rs.recordset.map(v => ({ jdrate: (v['jdrate10'] / 10).toFixed(1) }))
 }
 

@@ -675,11 +675,11 @@ const option ={
                             "value": "WCP2"
                         },
                         {
-                            "label": "锯切机#1",
+                            "label": "锯切机1号切断数",
                             "value": "CUTNO1"
                         },
                         {
-                            "label": "锯切机#2",
+                            "label": "锯切机2号切断数",
                             "value": "CUTNO2"
                         }
                     ],
@@ -755,7 +755,7 @@ const option ={
                     "option": {
                         "gridX": 90,
                         "gridY": 0,
-                        "gridX2": 0,
+                        "gridX2": 60,
                         "gridY2": 0,
                         "nameColor": "#eee",
                         "lineColor": "#eee",
@@ -838,7 +838,9 @@ const option ={
                         "subtext": "",
                         "titlePostion": "left",
                         "labelShowColor": "rgba(144, 238, 144, 1)",
-                        "legendPostion": "right"
+                        "legendPostion": "right",
+                        "xAxisName": "日期/月",
+                        "yAxisName": "数量/根"
                     },
                     "left": 17.56,
                     "top": 687.96,
@@ -924,7 +926,7 @@ const option ={
                     "option": {
                         "gridX": 90,
                         "gridY": 0,
-                        "gridX2": 0,
+                        "gridX2": 60,
                         "gridY2": 0,
                         "nameColor": "#eee",
                         "lineColor": "#eee",
@@ -993,7 +995,7 @@ const option ={
                             }
                         ],
                         "symbolSize": 6,
-                        "smooth": true,
+                        "smooth": false,
                         "barMinHeight": 2,
                         "xAxisinterval": false,
                         "legend": true,
@@ -1002,7 +1004,9 @@ const option ={
                         "titleColor": "rgba(0, 186, 189, 1)",
                         "titleFontSize": 20,
                         "titlePostion": "left",
-                        "legendPostion": "right"
+                        "legendPostion": "right",
+                        "yAxisName": "数量/根",
+                        "xAxisName": "日期/天"
                     },
                     "left": 16.79,
                     "top": 247.96,
