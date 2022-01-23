@@ -182,7 +182,7 @@
       $('#submit').click(function () {
         const username = $('#username>input').val()
         const password = $('#password>input').val()
-        fetch('/api/login', {
+        fetch('/api/v1/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, password })

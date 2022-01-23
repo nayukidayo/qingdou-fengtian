@@ -28,7 +28,8 @@ f.setErrorHandler(async (err, req, res) => {
     await f.register(require('./helper'))
     await f.register(require('./crontab'))
     await f.register(require('fastify-cors'))
-    await f.register(require('./routes'))
+    await f.register(require('./routes/v1'), { prefix: '/api/v1' })
+    await f.register(require('./routes/v2'), { prefix: '/api/v2' })
     await f.register(require('fastify-static'), { root: PUBLIC })
     await f.listen(PORT, '0.0.0.0')
   } catch (err) {

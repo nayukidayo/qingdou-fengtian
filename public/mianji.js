@@ -159,7 +159,7 @@ const option ={
           "zIndex": 0,
           "child": {},
           "time": 600000,
-          "url": "api/mianji",
+          "url": "/api/v2/mianji",
           "dataMethod": "get"
       }
   ]

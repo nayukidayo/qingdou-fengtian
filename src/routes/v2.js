@@ -3,7 +3,7 @@ const sql = require('mssql')
 module.exports = async f => {
   // 明文登录
   f.post(
-    '/api/login',
+    '/login',
     {
       schema: {
         body: {
@@ -39,7 +39,7 @@ module.exports = async f => {
 
   // 统计年数据
   f.get(
-    '/api/stat/year',
+    '/stat/year',
     {
       schema: {
         querystring: {
@@ -74,7 +74,7 @@ module.exports = async f => {
 
   // 统计月数据
   f.get(
-    '/api/stat/month',
+    '/stat/month',
     {
       schema: {
         querystring: {
@@ -104,7 +104,7 @@ module.exports = async f => {
 
   // 不良品 3 banci 31 day 31 pinfan
   f.get(
-    '/api/blp',
+    '/blp',
     {
       schema: {
         querystring: {
@@ -123,13 +123,13 @@ module.exports = async f => {
       let rs = await f.db.request().query(`IF OBJECT_ID(N'dbo.${table}', N'U') IS NOT NULL SELECT 1`)
       if (!rs.recordset) return { err: 4002, msg: '请求参数错误' }
       rs = await f.db.request().query(`select * from ${table}`)
-      return { err: 0, data: f.blp(rs) }
+      return { err: 0, data: f.blphis(rs) }
     }
   )
 
   // 切断面积
   f.get(
-    '/api/mianji',
+    '/mianji',
     {
       schema: {
         querystring: {
@@ -152,7 +152,7 @@ module.exports = async f => {
 
   // 异常信息
   f.get(
-    '/api/yichang',
+    '/yichang',
     {
       schema: {
         querystring: {
@@ -175,7 +175,7 @@ module.exports = async f => {
 
   // 可动率
   f.get(
-    '/api/ratehis',
+    '/ratehis',
     {
       schema: {
         querystring: {

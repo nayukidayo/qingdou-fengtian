@@ -287,7 +287,7 @@ const option ={
           "zIndex": 0,
           "child": {},
           "time": 600000,
-          "url": "/api/ratehis",
+          "url": "/api/v2/ratehis",
           "dataMethod": "get"
       }
   ]

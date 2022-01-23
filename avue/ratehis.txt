@@ -287,7 +287,7 @@
             "zIndex": 0,
             "child": {},
             "time": 600000,
-            "url": "http://127.0.0.1:3000/api/ratehis",
+            "url": "http://127.0.0.1:3000/api/v2/ratehis",
             "dataMethod": "get"
         }
     ]

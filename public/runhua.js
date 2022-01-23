@@ -239,7 +239,7 @@ const option ={
             "index": "896c052e-6b88-410d-84d0-9c88073ddca4",
             "zIndex": 1,
             "child": {},
-            "url": "/api/yichang",
+            "url": "/api/v2/yichang",
             "dataMethod": "get",
             "time": 600000
         },
@@ -393,7 +393,7 @@ const option ={
             "index": "07c9fa39-af46-4561-876f-1b807e0bed56",
             "zIndex": 0,
             "child": {},
-            "url": "/api/yichang",
+            "url": "/api/v2/yichang",
             "dataMethod": "get",
             "time": 600000
         }
